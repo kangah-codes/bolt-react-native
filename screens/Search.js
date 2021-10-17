@@ -33,7 +33,12 @@ export default function Search() {
 				<BoltSemiBoldText style={tw`text-2xl`}>Search</BoltSemiBoldText>
 
 				<View style={tw`bg-gray-200 p-4 rounded-md flex flex-row mt-3`}>
-					<Ionicons name="ios-search" size={18} color="black" />
+					<Ionicons
+						name="ios-search"
+						size={18}
+						color="black"
+						style={tw`my-auto`}
+					/>
 					<TextInput
 						style={tw`ml-3`}
 						placeholder="Restaurants and Cuisines"
