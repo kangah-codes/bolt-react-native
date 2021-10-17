@@ -12,7 +12,10 @@ import Constants from "expo-constants";
 export default function Home() {
 	return (
 		<ScrollView
-			style={{ ...tw`flex pt-2`, marginTop: Constants.statusBarHeight }}
+			style={{
+				...tw`flex pt-2`,
+				marginTop: Constants.statusBarHeight,
+			}}
 		>
 			<StatusBar style="auto" />
 			<View style={tw`flex flex-row items-center mx-5`}>
@@ -26,7 +29,7 @@ export default function Home() {
 				<DiscountList />
 			</View>
 
-			<View>
+			<View style={tw`pb-20`}>
 				<RestaurantList />
 			</View>
 		</ScrollView>
