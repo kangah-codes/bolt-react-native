@@ -7,7 +7,7 @@
 
 # Home
 
-![Home Screen](assets/home.PNG)
+![Home Screen]<img src="https://github.com/kangah-codes/bolt-react-native/raw/master/assets/home.PNG" width="562.5" height="1218">
 
 # Search
 
