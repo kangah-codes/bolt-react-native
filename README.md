@@ -7,19 +7,19 @@
 
 # Home
 
-![Home Screen]<img src="https://github.com/kangah-codes/bolt-react-native/raw/master/assets/home.PNG" width="281.3" height="609">
+<img src="https://github.com/kangah-codes/bolt-react-native/raw/master/assets/home.PNG" width="281.3" height="609">
 
 # Search
 
-![Search Screen](assets/search.PNG)
+<img src="https://github.com/kangah-codes/bolt-react-native/raw/master/assets/search.PNG" width="281.3" height="609">
 
 # Orders
 
-![Orders Screen](assets/orders.PNG)
+<img src="https://github.com/kangah-codes/bolt-react-native/raw/master/assets/orders.PNG" width="281.3" height="609">
 
 # Profile
 
-![Profile Screen](assets/profile.PNG)
+<img src="https://github.com/kangah-codes/bolt-react-native/raw/master/assets/profile.PNG" width="281.3" height="609">
 
 ### Todo
 
