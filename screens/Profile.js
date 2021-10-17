@@ -45,7 +45,9 @@ export default function Profile() {
 					style={tw`mx-5 pb-96`}
 					data={profileTabs}
 					renderItem={({ item }) => (
-						<TouchableOpacity style={tw`w-full flex flex-row mb-7`}>
+						<TouchableOpacity
+							style={tw`w-full flex flex-row mb-7 items-center`}
+						>
 							{item.icon === "creditcard" ? (
 								<AntDesign
 									name={item.icon}
