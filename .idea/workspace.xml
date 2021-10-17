@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7169876c-a4ef-46d1-acfe-a010d3088c86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/screens/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Profile.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1zdp2cOaNdkRDYTZRLt3dqU4QYI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7169876c-a4ef-46d1-acfe-a010d3088c86" name="Default Changelist" comment="" />
+      <created>1634487612474</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634487612474</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="372" y="249" width="1200" height="800" key="AVDManager" timestamp="1634488261457">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="372" y="249" width="1200" height="800" key="AVDManager/0.0.1920.1032@0.0.1920.1032" timestamp="1634488261457" />
+  </component>
+</project>
