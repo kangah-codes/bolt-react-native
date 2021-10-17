@@ -18,6 +18,9 @@ import { Foundation as Icon } from "@expo/vector-icons";
 import Entypo from "react-native-vector-icons/Entypo";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Feather from "react-native-vector-icons/Feather";
+import Search from "./screens/Search";
+import Orders from "./screens/Orders";
+import Profile from "./screens/Profile";
 
 export default function App() {
 	let [fontsLoaded] = useFonts({
@@ -34,7 +37,7 @@ export default function App() {
 				<StatusBar />
 				<BottomBar.Navigator
 					tabBar={(props) => (
-						<View style={tw``}>
+						<View style={tw`border-t border-gray-100`}>
 							<BottomTabBar {...props} />
 							{/* {IS_IPHONE_X && (
 								<View
@@ -73,7 +76,7 @@ export default function App() {
 					/>
 					<BottomBar.Screen
 						name="Search"
-						component={Home}
+						component={Search}
 						options={{
 							tabBarIcon: ({ color, focused }) => (
 								<Ionicons
@@ -89,7 +92,7 @@ export default function App() {
 					/>
 					<BottomBar.Screen
 						name="Orders"
-						component={Home}
+						component={Orders}
 						options={{
 							tabBarIcon: ({ color, focused }) =>
 								focused ? (
@@ -113,7 +116,7 @@ export default function App() {
 					/>
 					<BottomBar.Screen
 						name="Profile"
-						component={Home}
+						component={Profile}
 						options={{
 							tabBarIcon: ({ color, focused }) => (
 								<Feather
@@ -128,15 +131,6 @@ export default function App() {
 					/>
 				</BottomBar.Navigator>
 			</NavigationContainer>
-			// <ScrollView
-			// 	style={{
-			// 		...tw`flex pt-2`,
-			// 		marginTop: Constants.statusBarHeight,
-			// 	}}
-			// >
-			// 	<Home />
-			// 	<StatusBar style="auto" />
-			// </ScrollView>
 		);
 	}
 }
