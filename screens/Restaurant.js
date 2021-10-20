@@ -28,9 +28,7 @@ const IMAGE_WIDTH = 290;
 
 const RestaurantScreen = ({ navigation, route }) => {
 	const { banner, name, rating, price, menu } = route.params;
-	const scrollY = useRef(
-		new Animated.Value(0 - Constants.statusBarHeight * 3)
-	).current;
+	const scrollY = useRef(new Animated.Value(0)).current;
 	const [toggleBar, setToggleBar] = useState(false);
 	const searchBarAnim = useRef(
 		new Animated.Value(0 - Constants.statusBarHeight * 3)
