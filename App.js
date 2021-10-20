@@ -20,6 +20,7 @@ export default function App() {
 	} else {
 		return (
 			<NavigationContainer>
+				{/* <StatusBar style="auto" /> */}
 				<Stack.Navigator>
 					<Stack.Screen
 						name="Home"
