@@ -16,8 +16,12 @@ export default function RestaurantList({ navigation }) {
 			</View>
 
 			<View>
-				{restaurants.map((item) => (
-					<RestaurantCard data={item} navigation={navigation} />
+				{restaurants.map((item, index) => (
+					<RestaurantCard
+						key={index}
+						data={item}
+						navigation={navigation}
+					/>
 				))}
 			</View>
 
