@@ -4,8 +4,8 @@ import tw from "tailwind-react-native-classnames";
 import IonIcons from "react-native-vector-icons/Ionicons";
 import { BoltLightText, BoltSemiBoldText } from "../CustomText";
 
-export default function RestaurantCard({ data }) {
-	const { name, price, rating, discount, image } = data;
+export default function RestaurantCard({ data, navigation }) {
+	const { name, price, rating, discount, image, menu } = data;
 
 	return (
 		<View style={tw`flex-col mr-4 justify-between w-full`}>
@@ -35,7 +35,18 @@ export default function RestaurantCard({ data }) {
 						70-75 min
 					</BoltSemiBoldText>
 				</View>
-				<TouchableOpacity style={tw`w-full h-full`}>
+				<TouchableOpacity
+					style={tw`w-full h-full`}
+					onPress={() =>
+						navigation.navigate("Restaurant", {
+							banner: image,
+							name,
+							rating,
+							price,
+							menu,
+						})
+					}
+				>
 					<Image
 						source={image}
 						style={tw`w-full h-full rounded-lg`}
