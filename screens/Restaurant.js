@@ -9,6 +9,9 @@ import {
 	TouchableOpacity,
 	FlatList,
 	Animated,
+	Platform,
+	Dimensions,
+	SafeAreaView,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -28,10 +31,14 @@ const IMAGE_WIDTH = 290;
 
 const RestaurantScreen = ({ navigation, route }) => {
 	const { banner, name, rating, price, menu } = route.params;
-	const scrollY = useRef(new Animated.Value(0)).current;
+	const scrollY = useRef(new Animated.Value(0.01)).current;
 	const [toggleBar, setToggleBar] = useState(false);
 	const searchBarAnim = useRef(
-		new Animated.Value(0 - Constants.statusBarHeight * 3)
+		new Animated.Value(
+			Platform.OS === "android"
+				? 0 - Constants.statusBarHeight * 6
+				: 0 - Constants.statusBarHeight * 3
+		)
 	).current;
 
 	useEffect(() => {
@@ -43,7 +50,10 @@ const RestaurantScreen = ({ navigation, route }) => {
 			}).start();
 		} else {
 			Animated.timing(searchBarAnim, {
-				toValue: 0 - Constants.statusBarHeight * 3,
+				toValue:
+					Platform.OS === "android"
+						? 0 - Constants.statusBarHeight * 6
+						: 0 - Constants.statusBarHeight * 3,
 				duration: 150,
 				useNativeDriver: true,
 			}).start();
@@ -54,45 +64,60 @@ const RestaurantScreen = ({ navigation, route }) => {
 		<View style={tw`flex relative`}>
 			<Animated.View
 				style={tw.style(
-					"bg-white w-full absolute flex items-center pt-14 px-5",
+					"bg-white w-full absolute flex items-center px-5",
 					{
 						transform: [{ translateY: searchBarAnim }],
 						zIndex: 100,
+						elevation: 100,
+						paddingTop: Constants.statusBarHeight,
 					}
 				)}
 			>
 				<View
 					style={tw.style(
-						"flex flex-col w-full justify-between h-full",
-						{
-							zIndex: 100,
-						}
+						"flex flex-col w-full justify-between h-full"
+						// {
+						// 	zIndex: 100,
+						// 	elevation: 100,
+						// }
 					)}
 				>
-					<View style={tw`w-full flex flex-row justify-between`}>
-						<TouchableOpacity onPress={() => navigation.goBack()}>
-							<Ionicons
-								name="ios-arrow-back-outline"
-								size={24}
-								color="black"
-							/>
-						</TouchableOpacity>
+					<View
+						style={tw.style("w-full flex pt-1", {
+							"items-center": Platform.OS === "android",
+							"justify-between flex-row": Platform.OS === "ios",
+						})}
+					>
+						{Platform.OS === "ios" && (
+							<TouchableOpacity
+								onPress={() => navigation.goBack()}
+							>
+								<Ionicons
+									name="ios-arrow-back-outline"
+									size={24}
+									color="black"
+								/>
+							</TouchableOpacity>
+						)}
 
 						<BoltSemiBoldText
-							style={tw`text-black text-xl my-auto`}
+							style={tw.style("my-auto text-black my-auto", {
+								fontSize:
+									Platform.OS === "ios"
+										? 20
+										: Dimensions.get("window").width / 25,
+							})}
 						>
 							{name}
 						</BoltSemiBoldText>
 
-						<TouchableOpacity
-							onPress={() => setToggleBar(!toggleBar)}
-						>
+						{Platform.OS === "ios" && (
 							<Ionicons
 								name="ios-search"
 								size={24}
 								color="black"
 							/>
-						</TouchableOpacity>
+						)}
 					</View>
 
 					<FlatList
@@ -119,10 +144,14 @@ const RestaurantScreen = ({ navigation, route }) => {
 				<View style={tw`w-full relative`}>
 					<View
 						style={{
-							...tw`w-full pt-3 relative items-center`,
+							...tw`w-full relative items-center`,
 							zIndex: 100,
 							elevation: 100,
 							marginTop: Constants.statusBarHeight,
+							// paddingTop:
+							// 	Platform.OS === "android"
+							// 		? Constants.statusBarHeight
+							// 		: 0,
 						}}
 					>
 						<View
@@ -130,6 +159,7 @@ const RestaurantScreen = ({ navigation, route }) => {
 								"flex px-5 flex-row w-full absolute justify-between",
 								{
 									zIndex: 100,
+									elevation: 100,
 								}
 							)}
 						>
@@ -139,19 +169,15 @@ const RestaurantScreen = ({ navigation, route }) => {
 								<Ionicons
 									name="ios-arrow-back-outline"
 									size={24}
-									color="white"
+									color={toggleBar ? "black" : "white"}
 								/>
 							</TouchableOpacity>
 
-							<TouchableOpacity
-								onPress={() => setToggleBar(!toggleBar)}
-							>
-								<Ionicons
-									name="ios-search"
-									size={24}
-									color="white"
-								/>
-							</TouchableOpacity>
+							<Ionicons
+								name="ios-search"
+								size={24}
+								color={toggleBar ? "black" : "white"}
+							/>
 						</View>
 					</View>
 					<Animated.Image
@@ -203,7 +229,7 @@ const RestaurantScreen = ({ navigation, route }) => {
 				>
 					<View
 						style={tw.style("", {
-							marginTop: IMAGE_WIDTH / 2,
+							marginTop: IMAGE_WIDTH / 1.8,
 						})}
 					>
 						<View
