@@ -281,9 +281,12 @@ const RestaurantScreen = ({ navigation, route }) => {
 											"flex flex-row justify-between items-center w-full border-b border-gray-200",
 											{
 												"py-4": !!item.image,
+												"opacity-50":
+													!!item.isUnavailable,
 											}
 										)}
 										key={index}
+										disabled={item.isUnavailable}
 									>
 										<View style={tw`w-3/5 pr-5`}>
 											<View
