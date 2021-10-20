@@ -266,7 +266,7 @@ const RestaurantScreen = ({ navigation, route }) => {
 							style={tw.style(
 								`${index !== 0 ? "" : "mt-2"} w-full`,
 								{
-									"pb-20": index === menu.length - 1,
+									"pb-28": index === menu.length - 1,
 								}
 							)}
 						>
