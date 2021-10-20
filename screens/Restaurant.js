@@ -75,30 +75,29 @@ const RestaurantScreen = ({ navigation, route }) => {
 			>
 				<View
 					style={tw.style(
-						"flex flex-col w-full justify-between h-full"
-						// {
-						// 	zIndex: 100,
-						// 	elevation: 100,
-						// }
+						"flex flex-col w-full justify-between h-full",
+						{
+							zIndex: 100,
+							elevation: 100,
+						}
 					)}
 				>
 					<View
-						style={tw.style("w-full flex pt-1", {
-							"items-center": Platform.OS === "android",
-							"justify-between flex-row": Platform.OS === "ios",
-						})}
-					>
-						{Platform.OS === "ios" && (
-							<TouchableOpacity
-								onPress={() => navigation.goBack()}
-							>
-								<Ionicons
-									name="ios-arrow-back-outline"
-									size={24}
-									color="black"
-								/>
-							</TouchableOpacity>
+						style={tw.style(
+							"w-full flex pt-1 flex-row justify-between",
+							{
+								// "items-center": Platform.OS === "android",
+								// "justify-between flex-row": Platform.OS === "ios",
+							}
 						)}
+					>
+						<TouchableOpacity onPress={() => navigation.goBack()}>
+							<Ionicons
+								name="ios-arrow-back-outline"
+								size={24}
+								color="black"
+							/>
+						</TouchableOpacity>
 
 						<BoltSemiBoldText
 							style={tw.style("my-auto text-black my-auto", {
@@ -111,13 +110,7 @@ const RestaurantScreen = ({ navigation, route }) => {
 							{name}
 						</BoltSemiBoldText>
 
-						{Platform.OS === "ios" && (
-							<Ionicons
-								name="ios-search"
-								size={24}
-								color="black"
-							/>
-						)}
+						<Ionicons name="ios-search" size={24} color="black" />
 					</View>
 
 					<FlatList
@@ -140,9 +133,9 @@ const RestaurantScreen = ({ navigation, route }) => {
 				</View>
 			</Animated.View>
 
-			<View style={tw.style("flex relative")}>
-				<View style={tw`w-full relative`}>
-					<View
+			<View style={tw.style("flex")}>
+				<View style={tw.style("w-full relative", {})}>
+					{/* <View
 						style={{
 							...tw`w-full relative items-center`,
 							zIndex: 100,
@@ -179,7 +172,7 @@ const RestaurantScreen = ({ navigation, route }) => {
 								color={toggleBar ? "black" : "white"}
 							/>
 						</View>
-					</View>
+					</View> */}
 					<Animated.Image
 						style={{
 							...tw`w-full top-0`,
@@ -225,11 +218,11 @@ const RestaurantScreen = ({ navigation, route }) => {
 					)}
 					contentContainerStyle={{ flexGrow: 1 }}
 					scrollEventThrottle={16}
-					style={tw`px-5`}
+					style={tw`px-5 pt-5`}
 				>
 					<View
-						style={tw.style("", {
-							marginTop: IMAGE_WIDTH / 1.8,
+						style={tw.style({
+							marginTop: IMAGE_WIDTH / 1.6,
 						})}
 					>
 						<View
