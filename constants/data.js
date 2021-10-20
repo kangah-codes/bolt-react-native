@@ -261,6 +261,7 @@ export const restaurants = [
 						description: "Chicken",
 						price: "3.00",
 						discount: "50.00",
+						isPopular: true,
 						image: require("../assets/images/restaurant_foods/bacon-burger.jpg"),
 					},
 					{
@@ -295,6 +296,7 @@ export const restaurants = [
 						name: "Blackstar burger",
 						description: "Chicken",
 						price: "3.00",
+						isPopular: true,
 						image: require("../assets/images/restaurant_foods/blackstar-burger.jpg"),
 					},
 				],
