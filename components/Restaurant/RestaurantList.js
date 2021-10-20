@@ -6,7 +6,7 @@ import { BoltSemiBoldText } from "../CustomText";
 import { restaurants } from "../../constants";
 import RestaurantCard from "./RestaurantCard";
 
-export default function RestaurantList() {
+export default function RestaurantList({ navigation }) {
 	return (
 		<View style={tw`flex mt-4 mx-5`}>
 			<View style={tw`flex flex-row items-center justify-between`}>
@@ -17,7 +17,7 @@ export default function RestaurantList() {
 
 			<View>
 				{restaurants.map((item) => (
-					<RestaurantCard data={item} />
+					<RestaurantCard data={item} navigation={navigation} />
 				))}
 			</View>
 
