@@ -68,7 +68,7 @@ const RestaurantScreen = ({ navigation, route }) => {
 					{
 						transform: [{ translateY: searchBarAnim }],
 						zIndex: 100,
-						elevation: 100,
+						elevation: 10000,
 						paddingTop: Constants.statusBarHeight,
 					}
 				)}
@@ -134,13 +134,19 @@ const RestaurantScreen = ({ navigation, route }) => {
 			</Animated.View>
 
 			<View style={tw.style("flex")}>
-				<View style={tw.style("w-full relative", {})}>
-					{/* <View
+				<View
+					style={tw.style("w-full relative", {
+						zIndex: 400,
+						elevation: 400,
+					})}
+				>
+					<View
 						style={{
-							...tw`w-full relative items-center`,
-							zIndex: 100,
-							elevation: 100,
+							...tw`w-full absolute items-center`,
+							zIndex: 400,
+							elevation: 10000,
 							marginTop: Constants.statusBarHeight,
+
 							// paddingTop:
 							// 	Platform.OS === "android"
 							// 		? Constants.statusBarHeight
@@ -172,7 +178,7 @@ const RestaurantScreen = ({ navigation, route }) => {
 								color={toggleBar ? "black" : "white"}
 							/>
 						</View>
-					</View> */}
+					</View>
 					<Animated.Image
 						style={{
 							...tw`w-full top-0`,
