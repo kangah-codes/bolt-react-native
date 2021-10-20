@@ -21,6 +21,10 @@
 
 <img src="https://github.com/kangah-codes/bolt-react-native/raw/master/assets/profile.PNG" width="281.3" height="609">
 
+# Restaurant Page
+
+<img src="https://github.com/kangah-codes/bolt-react-native/raw/master/assets/restaurant.PNG" width="281.3" height="609">
+
 ### Todo
 
 -   [x] Bottom Navigation Bar
