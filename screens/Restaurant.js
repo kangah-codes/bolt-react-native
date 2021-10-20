@@ -166,14 +166,14 @@ const RestaurantScreen = ({ navigation, route }) => {
 									translateY: scrollY.interpolate({
 										inputRange: [0, IMAGE_WIDTH],
 										outputRange: [0, -IMAGE_WIDTH],
-										// extrapolate: Extrapolate.CLAMP,
+										extrapolate: "clamp",
 									}),
 								},
 								{
 									scale: scrollY.interpolate({
 										inputRange: [-IMAGE_WIDTH * 2, 0],
 										outputRange: [5, 1],
-										// extrapolate: Extrapolate.CLAMP,
+										extrapolate: "clamp",
 									}),
 								},
 							],
@@ -190,7 +190,8 @@ const RestaurantScreen = ({ navigation, route }) => {
 							listener: (event) => {
 								const offsetY =
 									event.nativeEvent.contentOffset.y;
-								if (offsetY > 0) {
+								console.log(offsetY);
+								if (offsetY > 60) {
 									setToggleBar(true);
 								} else {
 									setToggleBar(false);
