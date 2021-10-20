@@ -9,7 +9,7 @@ import RestaurantList from "../components/Restaurant/RestaurantList";
 import { ScrollView } from "react-native-gesture-handler";
 import Constants from "expo-constants";
 
-export default function Home() {
+const Home = ({ navigation }) => {
 	return (
 		<ScrollView
 			style={{
@@ -29,9 +29,11 @@ export default function Home() {
 				<DiscountList />
 			</View>
 
-			<View style={tw`pb-20`}>
-				<RestaurantList />
+			<View style={tw`pb-5`}>
+				<RestaurantList navigation={navigation} />
 			</View>
 		</ScrollView>
 	);
-}
+};
+
+export default Home;
