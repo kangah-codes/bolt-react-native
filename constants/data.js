@@ -284,6 +284,7 @@ export const restaurants = [
 						description: "Chicken",
 						price: "3.00",
 						image: require("../assets/images/restaurant_foods/bacon-burger.jpg"),
+						isUnavailable: true,
 					},
 				],
 			},
