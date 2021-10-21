@@ -64,7 +64,7 @@ export default function HomeTabs() {
 				>
 					<BottomBar.Screen
 						name="AppHome"
-						component={RestaurantStackScreen}
+						component={Home}
 						options={{
 							tabBarIcon: ({ color, focused }) =>
 								focused ? (
