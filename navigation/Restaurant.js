@@ -6,6 +6,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Home from "../screens/Home";
 import RestaurantScreen from "../screens/Restaurant";
+import RestaurantInfo from "../screens/RestaurantInfo";
+import Profile from "../screens/Profile";
 
 const RestaurantStack = createStackNavigator();
 
@@ -13,8 +15,13 @@ const RestaurantStackScreen = () => {
 	return (
 		<RestaurantStack.Navigator>
 			<RestaurantStack.Screen
-				name="Home"
-				component={Home}
+				name="RestaurantPage"
+				component={RestaurantScreen}
+				options={{ headerShown: false }}
+			/>
+			<RestaurantStack.Screen
+				name="RestaurantInfo"
+				component={RestaurantInfo}
 				options={{ headerShown: false }}
 			/>
 		</RestaurantStack.Navigator>
