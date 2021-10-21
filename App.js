@@ -6,6 +6,7 @@ import { useFonts } from "expo-font";
 import RestaurantScreen from "./screens/Restaurant";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeTabs from "./navigation/Tabs";
+import RestaurantStackScreen from "./navigation/Restaurant";
 
 const Stack = createStackNavigator();
 
@@ -29,7 +30,7 @@ export default function App() {
 					/>
 					<Stack.Screen
 						name="Restaurant"
-						component={RestaurantScreen}
+						component={RestaurantStackScreen}
 						options={{ headerShown: false }}
 					/>
 				</Stack.Navigator>
