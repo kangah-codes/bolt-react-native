@@ -264,6 +264,11 @@ const RestaurantScreen = ({ navigation, route }) => {
 						<View style={tw`w-full mt-1`}>
 							<TouchableOpacity
 								style={tw`border-b border-gray-200 flex flex-row justify-between py-3`}
+								onPress={() =>
+									navigation.navigate("RestaurantInfo", {
+										name,
+									})
+								}
 							>
 								<View style={tw`flex flex-row items-start`}>
 									<MaterialIcons
