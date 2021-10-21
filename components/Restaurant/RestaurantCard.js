@@ -39,11 +39,14 @@ export default function RestaurantCard({ data, navigation }) {
 					style={tw`w-full h-full`}
 					onPress={() =>
 						navigation.navigate("Restaurant", {
-							banner: image,
-							name,
-							rating,
-							price,
-							menu,
+							screen: "RestaurantPage",
+							params: {
+								banner: image,
+								name,
+								rating,
+								price,
+								menu,
+							},
 						})
 					}
 				>
